@@ -1,1 +1,115 @@
 @import '~node_modules/modern-normalize/modern-normalize.css';
+
+body {
+  background: -webkit-linear-gradient(0deg, #141414, #292929);
+  color: rgb(240, 240, 240);
+}
+
+.search-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 8rem;
+
+  .search-container {
+    border-radius: 25px;
+    position: relative;
+    border: none;
+
+    > input {
+      width: 350px;
+      padding: 10px 20px;
+      border-radius: 25px;
+      border: none;
+      outline: none;
+      background-color: rgb(44, 44, 44);
+      color: rgb(240, 240, 240);
+      line-height: 1;
+
+      &:hover {
+        background-color: rgb(58, 58, 58);
+      }
+      &:focus {
+        background-color: rgb(51, 51, 51);
+      }
+    }
+
+    > button {
+      position: absolute;
+      top: 50%;
+      right: 2%;
+      padding: 0.2rem 0.8rem;
+      font-size: 1.1rem;
+      background-color: transparent;
+      border: none;
+      border-left: 1px solid gray;
+      cursor: pointer;
+      transform: translateY(-50%);
+
+      > svg {
+        transform: translateY(10%);
+        fill: rgb(240, 240, 240);
+      }
+    }
+  }
+}
+
+.gallery {
+  max-width: 1600px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  gap: 1.1rem;
+  flex-wrap: wrap;
+}
+
+.photo-card {
+  border-bottom: 1px solid rgb(163, 163, 163);
+  cursor: pointer;
+  overflow: hidden;
+
+  &:hover {
+    box-shadow: 1px 1px 3px rgb(92, 92, 92);
+  }
+
+  .gallery-img {
+    max-width: 100%;
+    width: 320px;
+    height: 180px;
+    object-fit: cover;
+    transition: transform 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+    &:hover {
+      transform: scale(1.07);
+    }
+  }
+}
+
+.info {
+  width: 320px;
+  display: flex;
+  gap: 0.3rem
+}
+
+.info-item {
+  text-align: center;
+  word-wrap: break-word;
+}
+
+.btn-load-more {
+  margin: 1rem 0 2rem 0;
+  padding: 0.5rem 1rem;
+  background-color: rgb(255, 255, 255, 0.1);
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+  color: rgb(240, 240, 240);
+
+  &:hover {
+    background-color: rgb(255, 255, 255, 0.2);
+  }
+}
+
+.is-hidden {
+  display: none;
+}
