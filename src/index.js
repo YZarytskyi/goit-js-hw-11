@@ -9,7 +9,7 @@ const BASE_URL = 'https://pixabay.com/api/';
 const API_KEY = '31488628-c834a527c2d0d1c920b3fe01a';
 const PER_PAGE = 40;
 let page = 1;
-let simpleLightbox;
+let simpleLightbox = new SimpleLightbox('.gallery a');
 
 formRef.addEventListener('submit', onSubmitHandler);
 
@@ -63,7 +63,7 @@ function onSubmitHandler(e) {
       const markup = createMarkup(data.hits);
       galleryRef.innerHTML = markup;
 
-      simpleLightbox = new SimpleLightbox('.gallery a').refresh();
+      simpleLightbox.refresh();
       
       if (data.totalHits > PER_PAGE) {
         const item = document.querySelector('.photo-card:last-child');
